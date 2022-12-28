@@ -1,0 +1,4 @@
+- name: Add the user 'test' with a bash shell
+  ansible.builtin.user:
+    name: test
+    shell: /bin/bash
