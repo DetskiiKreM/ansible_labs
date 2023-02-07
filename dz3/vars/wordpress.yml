@@ -1,5 +1,6 @@
 ---
 server_name: "example.com" # тут ваш домен
+admin_email: "tor1988@mail.ru"
 
 nginx_vhosts:
   - listen: "80"

@@ -1,0 +1,56 @@
+204 Lines should be no longer than 160 chars
+../external_roles/ansible-role-mysql/tasks/replication.yml:32
+    - (slave.Is_Slave is defined and not slave.Is_Slave) or (slave.Is_Replica is defined and not slave.Is_Replica) or (slave.Is_Slave is not defined and slave.Is_Replica is not defined and slave is failed)
+
+204 Lines should be no longer than 160 chars
+../external_roles/ansible-role-mysql/tasks/replication.yml:47
+    - (slave.Is_Slave is defined and not slave.Is_Slave) or (slave.Is_Replica is defined and not slave.Is_Replica) or (slave.Is_Slave is not defined and slave.Is_Replica is not defined and slave is failed)
+
+204 Lines should be no longer than 160 chars
+../external_roles/ansible-role-mysql/tasks/replication.yml:55
+    - (slave.Is_Slave is defined and slave.Is_Slave) or (slave.Is_Replica is defined and slave.Is_Replica) or (slave.Is_Slave is not defined and slave.Is_Replica is not defined and slave is failed)
+
+503 Tasks that run when changed should likely be handlers
+../external_roles/ansible-role-php/tasks/setup-Debian.yml:13
+Task/Handler: Delete APCu configuration file if this role will provide one.
+
+503 Tasks that run when changed should likely be handlers
+../external_roles/ansible-role-php/tasks/setup-Debian.yml:21
+Task/Handler: Delete OpCache configuration file if this role will provide one.
+
+701 Role info should contain platforms
+roles/wordpress/meta/main.yml:1
+{'meta/main.yml': {'galaxy_info': {'author': 'your name', 'description': 'your role description', 'company': 'your company (optional)', 'license': 'license (GPL-2.0-or-later, MIT, etc)', 'min_ansible_version': 2.1, 'galaxy_tags': [], '__line__': 2, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml'}, 'dependencies': [], '__line__': 1, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml', 'skipped_rules': []}}
+
+703 Should change default metadata: author
+roles/wordpress/meta/main.yml:1
+{'meta/main.yml': {'galaxy_info': {'author': 'your name', 'description': 'your role description', 'company': 'your company (optional)', 'license': 'license (GPL-2.0-or-later, MIT, etc)', 'min_ansible_version': 2.1, 'galaxy_tags': [], '__line__': 2, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml'}, 'dependencies': [], '__line__': 1, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml', 'skipped_rules': []}}
+
+703 Should change default metadata: company
+roles/wordpress/meta/main.yml:1
+{'meta/main.yml': {'galaxy_info': {'author': 'your name', 'description': 'your role description', 'company': 'your company (optional)', 'license': 'license (GPL-2.0-or-later, MIT, etc)', 'min_ansible_version': 2.1, 'galaxy_tags': [], '__line__': 2, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml'}, 'dependencies': [], '__line__': 1, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml', 'skipped_rules': []}}
+
+703 Should change default metadata: license
+roles/wordpress/meta/main.yml:1
+{'meta/main.yml': {'galaxy_info': {'author': 'your name', 'description': 'your role description', 'company': 'your company (optional)', 'license': 'license (GPL-2.0-or-later, MIT, etc)', 'min_ansible_version': 2.1, 'galaxy_tags': [], '__line__': 2, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml'}, 'dependencies': [], '__line__': 1, '__file__': '/root/ansible_labs/dz3/roles/wordpress/meta/main.yml', 'skipped_rules': []}}
+
+208 File permissions unset or incorrect
+roles/wordpress/tasks/main.yml:5
+Task/Handler: create /var/www/{{ server_name }} directory for unarchiving
+
+208 File permissions unset or incorrect
+roles/wordpress/tasks/main.yml:17
+Task/Handler: Set ownership
+
+301 Commands should not change things if nothing needs doing
+roles/wordpress/tasks/main.yml:25
+Task/Handler: Set permissions for directories
+
+301 Commands should not change things if nothing needs doing
+roles/wordpress/tasks/main.yml:28
+Task/Handler: Set permissions for files
+
+208 File permissions unset or incorrect
+roles/wordpress/tasks/main.yml:31
+Task/Handler: Set up wp-config
+

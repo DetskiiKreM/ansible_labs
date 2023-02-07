@@ -1,0 +1,16 @@
+---
+- name: Run nginx playbook
+  import_playbook: nginx.yml
+  tags: nginx
+
+- name: Run php playbook
+  import_playbook: php.yml
+  tags: php
+
+- name: Run mysql playbook
+  import_playbook: mysql.yml
+  tags: mysql
+
+- name: Run wordpress playbook
+  import_playbook: wordpress_new.yml
+  tags: wordpress

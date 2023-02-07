@@ -1,0 +1,15 @@
+---
+- name: Wordpress install
+  hosts: servers
+
+  vars_files:
+    - vars/wordpress.yml
+  roles:
+    - wordpress
+  tags: app
+  ignore_errors: yes
+
+- name: Send e-mail
+  tasks:
+    - include_tasks: optional.yml
+      when: inform | default('true') | bool

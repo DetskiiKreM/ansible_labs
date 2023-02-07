@@ -1,0 +1,6 @@
+---
+- name: Nginx install
+  hosts: servers
+
+  roles:
+    - ansible-role-nginx

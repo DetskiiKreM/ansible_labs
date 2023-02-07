@@ -1,0 +1,6 @@
+---
+- name: Php install
+  hosts: servers
+
+  roles:
+    - ansible-role-php

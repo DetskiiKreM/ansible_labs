@@ -1,0 +1,6 @@
+---
+- name: Mysql install
+  hosts: servers
+
+  roles:
+    - ansible-role-mysql

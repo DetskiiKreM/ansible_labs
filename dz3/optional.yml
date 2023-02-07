@@ -1,0 +1,11 @@
+---
+- name: Sending an e-mail using mail.ru SMTP servers
+  community.general.mail:
+    host: smtp.mail.ru
+    port: 465
+    username: tor1988@mail.ru
+    password: {{ email_password }}
+    to: Admin <{{ admin_email }}>
+    subject: Ansible-report
+    body: Playbook has been successfully provisioned.
+  delegate_to: localhost
