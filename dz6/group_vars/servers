@@ -1,0 +1,3 @@
+nginx_port: 80
+nginx_timeout: 30s
+nginx_upstreams: servers

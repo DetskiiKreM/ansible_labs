@@ -1,0 +1,14 @@
+---
+- name: Install nginx package
+  package:
+    name: nginx
+    state: present
+  when: not docker
+
+- name: Start Nginx Service
+  become: yes
+  service:
+    name: nginx
+    state: started
+  when: not docker
+

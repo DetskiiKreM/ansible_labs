@@ -1,0 +1,17 @@
+worker_processes 1;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    server {
+        listen {{ nginx_port }};
+
+        location / {
+            proxy_pass http://{{ nginx_upstreams }};
+            proxy_read_timeout {{ nginx_timeout }};
+        }
+    }
+}
+

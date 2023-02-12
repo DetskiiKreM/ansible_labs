@@ -1,0 +1,14 @@
+---
+- name: Install docker python module
+  pip:
+    name: docker
+  when: docker
+
+- name: Start nginx docker container
+  docker_container:
+    name: nginx
+    image: nginx
+    ports:
+      - "{{ nginx_port }}:80"
+  when: docker
+

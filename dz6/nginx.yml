@@ -1,0 +1,19 @@
+---
+- name: Install nginx
+  hosts: all
+  become: yes
+  
+  vars:
+    docker: False
+  
+  tasks:
+    - include: tasks/install_nginx_package.yml
+      when: not docker
+
+    - include: tasks/install_nginx_docker.yml
+      when: docker
+
+    - name: Create nginx configuration file
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
