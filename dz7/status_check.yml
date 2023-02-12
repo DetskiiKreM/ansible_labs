@@ -1,0 +1,17 @@
+---
+- name: Checking Nginx and MySQL status
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: Check nginx service
+      include: tasks/nginx_check.yml
+      tags: nginx
+
+    - name: Check MySQL status
+      include: tasks/mysql_check.yml
+      tags: mysql
+
+    - name: DB backup
+      include: tasks/backup_db.yml
+      tags: backup

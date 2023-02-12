@@ -1,0 +1,22 @@
+---
+- name: Check if nginx is running
+  shell: ps aux | grep '[n]ginx\:\ master process'
+  register: nginx_process
+  become: yes
+
+- name: Ensure nginx process is running
+  fail:
+    msg: "nginx process is not running"
+  when: nginx_process.rc != 0
+
+- name: Check if nginx port is open
+  wait_for:
+    port: 80
+    state: started
+  register: nginx_port
+  become: yes
+
+- name: Ensure nginx port is open
+  fail:
+    msg: "nginx port is not open"
+  when: nginx_port.failed

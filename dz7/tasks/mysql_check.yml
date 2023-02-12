@@ -1,0 +1,9 @@
+---
+- name: Check if MySQL is running
+  shell: systemctl is-active mysql
+  register: mysql_status
+  delegate_to: localhost
+
+- name: Display the result
+  debug:
+    var: mysql_status

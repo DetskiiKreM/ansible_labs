@@ -1,0 +1,5 @@
+---
+- name: Create a backup of the table
+  shell: mysqldump 'testdb' 'test' -u 'root' -h localhost -r /root/ansible_labs/dz7/test.sql
+  run_once: true
+  delegate_to: localhost
